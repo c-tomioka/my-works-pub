@@ -11,7 +11,7 @@ const isMetaMaskInstalled = () => {
 
 // 画面表示が、ローカルマシンのhtmlファイル参照でないかをチェック
 const isLocalFileView = () => {
-    if (location.protocol.match(/file:/)) {
+    if (location.protocol === 'file:') {
          return true;
      } else {
          return false;
