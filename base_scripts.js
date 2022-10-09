@@ -20,7 +20,7 @@ const isLocalFileView = () => {
  }
 
 // 画面上部に警告メッセージを表示する
-if (isLocalFileView) {
+if (isLocalFileView()) {
     // DOM で注意メッセージを表示する処理 **********//
     const helpElement = document.createElement('div');
     helpElement.innerText = 'この画面は "' + location.protocol + '//' + location.pathname + '" のファイルを表示しています。\nローカルファイルの表示からでは、セキュリティ上 window.ethereum が実行できないため、「http://」から始まるサイトにアップロードして表示してください。\n（例えば、GitHubに公開し、GitHub Pages を利用してこのページを表示すると動作します。）';
@@ -30,7 +30,7 @@ if (isLocalFileView) {
     helpElement.style.padding = '0.5em 1em';
     document.body.prepend(helpElement);
 
-} else if (!isMetaMaskInstalled) {
+} else if (!isMetaMaskInstalled()) {
     // MetaMask が未インストールの場合に、画面の上部に注意メッセージとダウンロードリンクを表示する
 
     // DOM で MetaMask のダウンロード先を表示する処理 **********//
@@ -59,12 +59,12 @@ if (isLocalFileView) {
 
 // 画面が読み込まれた後の処理
 window.onload = () => {
-    console.log(isLocalFileView);
-    if (isLocalFileView) {
+    console.log(isLocalFileView());
+    if (isLocalFileView()) {
         alert('アドレスが「file:」から始まるページでは利用できません。\n「https://」から始まるページでご利用ください。');
-    } else if (!isMetaMaskInstalled) {
+    } else if (!isMetaMaskInstalled()) {
         alert('このページを利用するには、MetaMask をインストールしてください。');
-    } else if (isMetaMaskInstalled) {
+    } else if (isMetaMaskInstalled()) {
         console.log('MetaMask がインストールされています');
     }
 }
