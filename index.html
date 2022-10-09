@@ -7,20 +7,25 @@
     <title>TOMIOKA's GitHub Pages</title>
 </head>
 <body>
-    <h1>MetaMask API 使用 DEMO</h1>
-    <p>ブラウザにインストールされているウォレットを接続して、情報を表示するサンプルです。</p>
-    <p>
-        これ以降の送金処理などの処理実装は、
-        <a href="https://docs.metamask.io/guide/ethereum-provider.html#table-of-contents" target="_blank" rel="noopener">公式ドキュメント</a>
-        のAPI使用方法を参照してください。
-    </p>
-
-    <div>
-        <button id="connect_btn">ウォレットに接続</button>
+    <div id="header">
+        MetaMask API 使用 <b>DEMO</b>
     </div>
 
-    <div id="wallet_accout_list">
-        <!-- ここに接続したウォレットを DOM で追加してみます -->
+    <div id="main">
+        <p>ブラウザにインストールされているウォレットを接続して、情報を表示するサンプルです。</p>
+        <p>
+            これ以降の送金処理などの処理実装は、
+            <a href="https://docs.metamask.io/guide/ethereum-provider.html#table-of-contents" target="_blank" rel="noopener">公式ドキュメント</a>
+            のAPI使用方法を参照してください。
+        </p>
+
+        <div class="button-area">
+            <button id="connect_btn">ウォレットに接続</button>
+        </div>
+
+        <div id="wallet_accout_list">
+            <!-- ここに接続したウォレットを DOM で追加してみます -->
+        </div>
     </div>
 
     <script src="base_scripts.js"></script>

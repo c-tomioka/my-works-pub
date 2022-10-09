@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+#header {
+    color: white;
+    background-color: #333;
+    font-size: 1rem;
+    padding: 0.5em 1em;
+}
+#main {
+    padding: 1em;
+}
+
+.button-area {
+    margin: 1em 0;
+}
+
+#wallet_accout_list {
+    margin-top: 2em;
+}
