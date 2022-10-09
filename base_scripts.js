@@ -1,11 +1,11 @@
 // MetaMask インストールチェック (これがないとウォレットにアクセスできない) ※注意 ローカルで読み込んでも、必ずエラーになります
 const isMetaMaskInstalled = () => {
    // Ethereum プロバイダーを検出できなかった場合（＝ MetaMask が未インストールの場合）
-   if (!(window.ethereum && !window.ethereum.isMetaMask)) {
+   if (window.ethereum && window.ethereum.isMetaMask) {
+        return true;
+    } else {
         console.log('MetaMask 未インストール');
         return false;
-    } else {
-        return true;
     }
 }
 
