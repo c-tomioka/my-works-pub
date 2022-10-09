@@ -22,7 +22,7 @@ const isLocalFileView = () => {
 if (isLocalFileView) {
     // DOM で注意メッセージを表示する処理 **********//
     const helpElement = document.createElement('div');
-    helpElement.innerText = 'この画面は "' + location.pathname + '" のファイルを表示しています。\nローカルファイルの表示からでは、セキュリティ上 window.ethereum が実行できないため、「http://」から始まるサイトにアップロードして表示してください。\n（例えば、GitHubに公開し、GitHub Pages を利用してこのページを表示すると動作します。）';
+    helpElement.innerText = 'この画面は "' + location.protocol + '//' + location.pathname + '" のファイルを表示しています。\nローカルファイルの表示からでは、セキュリティ上 window.ethereum が実行できないため、「http://」から始まるサイトにアップロードして表示してください。\n（例えば、GitHubに公開し、GitHub Pages を利用してこのページを表示すると動作します。）';
     helpElement.style.border = '1px solid #f3b76e';
     helpElement.style.borderRadius = '5px';
     helpElement.style.backgroundColor = '#f8f3ed';
