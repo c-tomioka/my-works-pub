@@ -79,10 +79,24 @@ function connectToWallet() {
         .then(
             // リクエスト後の処理を .then() で続けて書いています
             (acccounts) => {
-                console.log(acccounts);
-
+                // アカウントが １件でも取得できた場合
                 if (acccounts.length > 0) {
-                    console.log(acccounts[0]);
+                    for (let i; i < acccounts.length; i++) {
+                        // アドレスを取得
+                        const address = acccounts[i];
+
+                        // 表示内容をセット＆装飾
+                        const divElement = document.createElement('div');
+                        divElement.innerText = address;
+                        divElement.style.backgroundColor = '#eeeeee';
+                        divElement.style.padding = '0.5em 1em';
+                        divElement.style.marginTop = '0.2em';
+
+                        // 画面に表示
+                        document.getElementById('wallet_accout_list').appendChild(divElement);
+                    }
+                } else {
+                    alert('表示できるアカウントデータは０件です。');
                 }
             }
         )
