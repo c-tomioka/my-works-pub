@@ -13,10 +13,10 @@ const isMetaMaskInstalled = () => {
 const isLocalFileView = () => {
     console.log('location.protocol: ', location.protocol);
     if (location.protocol === 'file:') {
-         return true;
-     } else {
-         return false;
-     }
+        return true;
+    } else {
+        return false;
+    }
  }
 
 // 画面上部に警告メッセージを表示する
@@ -59,6 +59,7 @@ if (isLocalFileView) {
 
 // 画面が読み込まれた後の処理
 window.onload = () => {
+    console.log(isLocalFileView);
     if (isLocalFileView) {
         alert('アドレスが「file:」から始まるページでは利用できません。\n「https://」から始まるページでご利用ください。');
     } else if (!isMetaMaskInstalled) {
