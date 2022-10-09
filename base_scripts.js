@@ -68,21 +68,6 @@ window.onload = () => {
 }
 
 // ********** MetaMask 関連処理 ********** //
-try {
-    const acccounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-    if (acccounts.length > 0) {
-        console.log(acccounts[0]);
-    }
-} catch (err) {
-    if (err.code === 4001) {
-        // EIP-1193 userRejectedRequest error
-        // ユーザーが接続を拒否するとここに来ます
-        console.log('Please connect to MetaMask.');
-    } else {
-        console.error(err);
-    }
-}
-
 document.getElementById('connect_btn').addEventListener('click', connectToWallet);
 
 function connectToWallet() {
